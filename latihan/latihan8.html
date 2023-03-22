@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 8</title>
+</head>
+
+<body>
+    <button id="todo-button" onclick="changeText()">hello</button>
+    <div id="counter"></div>
+    <button onclick="counterUp()">Up</button>
+    <button onclick="counterDown()">Down</button>
+
+    <input type="text" id=" todo-title">
+    <button onclick=" displayTitle()">Display Text</button>
+    <script>
+        // 8A
+        function changeText() {
+            let textButton = document.getElementById("todo-button").innerText = "done";
+
+        }
+
+        //8B & 8C
+        let count = 0;
+        let counterText = document.getElementById("counter");
+        counterText.textContent = count;
+        function counterUp() {
+            count = count + 1;
+            counterText.textContent = count;
+        }
+        function counterDown() {
+            count = count - 1;
+            counterText.textContent = count;
+
+        }
+
+        //8D
+        function displayTitle() {
+            let textbox = document.getElementById('todo-title');
+            let title = textbox.value;
+
+            let div = document.createElement('div');
+            div.textContent = title;
+            document.body.appendChild(div);
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

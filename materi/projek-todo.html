@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Projek</title>
+</head>
+
+<body>
+    <input id="todo-title" type="text">
+    <button onclick="addTodo()"> Add Todo</button>
+    <div id="todo-list"></div>
+    <script>
+
+
+
+        let todos = ["get grocies", "wash car", "make dinner"];
+
+
+        renderTodo();
+
+
+
+        function addTodo() {
+            let textBox = document.getElementById('todo-title');
+            let title = textBox.value;
+            todos.push(title);
+            renderTodo();
+
+        }
+
+        function renderTodo() {
+            // wipe out todo list
+            document.getElementById("todo-list").innerHTML =  "";
+            
+            todos.forEach(function (todoTilte) {
+                let element = document.createElement("div");
+                element.innerText = todoTilte;
+                let todoList = document.getElementById("todo-list");
+                todoList.appendChild(element);
+
+            });
+
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
